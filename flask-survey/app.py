@@ -58,7 +58,7 @@ def show_question(qid):
         return redirect("/")
 
     if (len(responses) == len(survey.questions)):
-        # They've answered all the questions! Thank them.
+        
         return redirect("/complete")
 
     if (len(responses) != qid):
@@ -76,3 +76,10 @@ def complete():
     """Survey complete. Show completion page."""
 
     return render_template("completion.html")
+
+
+@app.route("/responses")
+def show_responses():
+    """Display the responses collected during the survey."""
+    responses = session.get(RESPONSES_KEY, [])
+    return render_template("responses.html", responses=responses)

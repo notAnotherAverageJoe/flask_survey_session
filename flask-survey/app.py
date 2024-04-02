@@ -41,7 +41,7 @@ def handle_question():
     session[RESPONSES_KEY] = responses
 
     if (len(responses) == len(survey.questions)):
-        # They've answered all the questions! Thank them.
+        
         return redirect("/complete")
 
     else:

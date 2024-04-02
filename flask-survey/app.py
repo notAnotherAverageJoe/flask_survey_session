@@ -5,6 +5,7 @@ from surveys import satisfaction_survey as survey
 # key names will use to store some things in the session;
 # put here as constants so we're guaranteed to be consistent in
 # our spelling of these
+CURRENT_SURVEY_KEY = 'current_survey'
 RESPONSES_KEY = "responses"
 
 app = Flask(__name__)
